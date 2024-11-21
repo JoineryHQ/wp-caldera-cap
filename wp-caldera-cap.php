@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       Caldera Capabilities
  * Plugin URI:        https://joineryhq.com
- * Description:       This is a description of the plugin.
+ * Description:       Provides a WordPress capability `caldera_forms_admin` to which is attached the permission to administer Caldera Forms.
  * Version:           1.0.0
  * Author:            Allen Shaw
  * Author URI:        https://joineryhq.com/
@@ -31,38 +31,11 @@ if ( ! defined( 'WPINC' ) ) {
 }
 
 /**
- * Currently plugin version.
- * Start at version 1.0.0 and use SemVer - https://semver.org
- * Rename this for your plugin and update it as you release new versions.
- */
-define( 'WP_CALDERA_CAP_VERSION', '1.0.0' );
-
-/**
- * The code that runs during plugin activation.
- * This action is documented in includes/class-wp-caldera-cap-activator.php
- */
-function activate_wp_caldera_cap() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-caldera-cap-activator.php';
-	Wp_Caldera_Cap_Activator::activate();
-}
-
-/**
- * The code that runs during plugin deactivation.
- * This action is documented in includes/class-wp-caldera-cap-deactivator.php
- */
-function deactivate_wp_caldera_cap() {
-	require_once plugin_dir_path( __FILE__ ) . 'includes/class-wp-caldera-cap-deactivator.php';
-	Wp_Caldera_Cap_Deactivator::deactivate();
-}
-
-register_activation_hook( __FILE__, 'activate_wp_caldera_cap' );
-register_deactivation_hook( __FILE__, 'deactivate_wp_caldera_cap' );
-
-/**
  * The core plugin class that is used to define internationalization,
  * admin-specific hooks, and public-facing site hooks.
  */
-require plugin_dir_path( __FILE__ ) . 'includes/class-wp-caldera-cap.php';
+require plugin_dir_path(__FILE__) . 'includes/class-plugin.php';
+require plugin_dir_path(__FILE__) . 'includes/class-util.php';
 
 /**
  * Begins execution of the plugin.
@@ -73,10 +46,10 @@ require plugin_dir_path( __FILE__ ) . 'includes/class-wp-caldera-cap.php';
  *
  * @since    1.0.0
  */
-function run_wp_caldera_cap() {
+function run_wpcalderacap() {
 
-	$plugin = new Wp_Caldera_Cap();
+	$plugin = new WpCalderaCapPlugin();
 	$plugin->run();
 
 }
-run_wp_caldera_cap();
+run_wpcalderacap();
