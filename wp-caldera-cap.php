@@ -15,7 +15,7 @@
  * @wordpress-plugin
  * Plugin Name:       Caldera Capabilities
  * Plugin URI:        https://joineryhq.com
- * Description:       Provides a WordPress capability `caldera_forms_admin` to which is attached the permission to administer Caldera Forms.
+ * Description:       Provides a WordPress capability `wp_caldera_cap_admin` to which is attached the permission to administer Caldera Forms.
  * Version:           1.0.0
  * Author:            Allen Shaw
  * Author URI:        https://joineryhq.com/
