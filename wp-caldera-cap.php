@@ -30,12 +30,12 @@ if ( ! defined( 'WPINC' ) ) {
 	die;
 }
 
-/**
- * The core plugin class that is used to define internationalization,
- * admin-specific hooks, and public-facing site hooks.
- */
+ // Include the core plugin class.
 require plugin_dir_path(__FILE__) . 'includes/class-plugin.php';
-require plugin_dir_path(__FILE__) . 'includes/class-util.php';
+
+// Define plugin lifecycle hooks.
+register_activation_hook(__FILE__, 'WpCalderaCapPlugin::onActivation');
+register_uninstall_hook(__FILE__, 'WpCalderaCapPlugin::onUnintstall');
 
 /**
  * Begins execution of the plugin.
@@ -47,9 +47,8 @@ require plugin_dir_path(__FILE__) . 'includes/class-util.php';
  * @since    1.0.0
  */
 function run_wpcalderacap() {
-
 	$plugin = new WpCalderaCapPlugin();
 	$plugin->run();
-
 }
+
 run_wpcalderacap();

@@ -1,6 +1,6 @@
 # WordPress: Caldera Capabilities
 
-Provides a WordPress capability `caldera_forms_admin` to which is attached the permission to administer Caldera Forms.
+Provides a WordPress capability `wp_caldera_cap_admin` to which is attached the permission to administer Caldera Forms.
 
 ## Support
 
